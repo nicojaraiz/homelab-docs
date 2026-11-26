@@ -1,5 +1,7 @@
 # Immich
 
+[← Volver al inicio](./README.md)
+
 ## Qué es
 
 Immich es una aplicación de gestión y backup de fotos y vídeos, pensada como alternativa autoalojada a servicios como Google Fotos o iCloud. Permite subir fotos desde el móvil de forma automática, organizarlas, buscarlas y verlas desde cualquier dispositivo, pero con la diferencia de que todo se guarda en tu propia infraestructura en lugar de en los servidores de una empresa.
@@ -39,7 +41,7 @@ Cada usuario cuenta con 200GB de almacenamiento para fotos y vídeos, y tiene pe
 
 ## Conceptos relacionados
 
-- [[Self-hosting]]
-- [[Contenedor (LXC)]]
-- [[NFS]]
-- [[NAS]]
+- [Self-hosting](./Conceptos.md#self-hosting)
+- [Contenedor (LXC)](./Conceptos.md#contenedor-lxc)
+- [NFS](./Conceptos.md#nfs)
+- [NAS](./Conceptos.md#nas)

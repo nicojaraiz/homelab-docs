@@ -1,5 +1,7 @@
 # UNAS-4 (NAS)
 
+[← Volver al inicio](./README.md)
+
 ## Historia
 
 Antes de tener este UNAS-4, contaba con un NAS D-Link muy antiguo de dos bahías. Sin embargo, no me sentía seguro guardando ahí datos importantes para mí, como las imágenes familiares, así que decidí dar el paso e invertir en un NAS mucho más potente y moderno: el que tengo actualmente.
@@ -30,12 +32,12 @@ El NAS comparte el almacenamiento hacia la Raspberry mediante NFS. Actualmente t
 | Permisos (nextcloud) | Read-Write |
 | Squash | Collaborative |
 
-> [!note] ¿Qué es el "squash" en NFS?
-> Es una configuración que determina cómo se traducen los permisos de usuario entre el cliente (la Raspberry) y el NAS. El modo "Collaborative" está pensado para que varios usuarios o servicios puedan escribir en la misma carpeta compartida sin conflictos de permisos.
+> [!NOTE]
+> **¿Qué es el "squash" en NFS?** Es una configuración que determina cómo se traducen los permisos de usuario entre el cliente (la Raspberry) y el NAS. El modo "Collaborative" está pensado para que varios usuarios o servicios puedan escribir en la misma carpeta compartida sin conflictos de permisos.
 
 ## Apagado automático ante cortes de luz
 
-El UNAS-4 no integra un cliente NUT genérico de terceros, por lo que su apagado ordenado ante un corte eléctrico se orquesta desde la Raspberry Pi mediante **SSH por clave pública** cuando el SAI Salicru llega a batería baja (ver [[SAI-UPS]]).
+El UNAS-4 no integra un cliente NUT genérico de terceros, por lo que su apagado ordenado ante un corte eléctrico se orquesta desde la Raspberry Pi mediante **SSH por clave pública** cuando el SAI Salicru llega a batería baja (ver [SAI / UPS](./SAI-UPS.md)).
 
 ## Resumen
 
@@ -52,8 +54,8 @@ El UNAS-4 no integra un cliente NUT genérico de terceros, por lo que su apagado
 
 ## Conceptos relacionados
 
-- [[NAS]]
-- [[NFS]]
-- [[RAID]]
-- [[SAI / UPS]]
-- [[SSH (Secure Shell)]]
+- [NAS](./Conceptos.md#nas)
+- [NFS](./Conceptos.md#nfs)
+- [RAID](./Conceptos.md#raid)
+- [SAI / UPS](./Conceptos.md#sai--ups)
+- [SSH (Secure Shell)](./Conceptos.md#ssh-secure-shell)

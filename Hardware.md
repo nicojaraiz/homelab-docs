@@ -1,5 +1,7 @@
 # Hardware
 
+[← Volver al inicio](./README.md)
+
 Vamos a repasar con qué cuento físicamente para este proyecto. Como ya he adelantado, soy bastante agarrado con el dinero, así que aquí no vais a encontrar un datacenter, pero sí lo justo y necesario para que todo funcione bien.
 
 ---
@@ -32,8 +34,8 @@ Aviso: tengo pánico a la pérdida de datos. Por eso este RAID me parecía indis
 | Rol | Servidor principal / nodo maestro NUT |
 | Fecha de adquisición | Pendiente |
 
-> [!note] Pendiente de documentar
-> Modelo exacto del HAT y capacidad de los NVMe.
+> [!NOTE]
+> **Pendiente de documentar:** Modelo exacto del HAT y capacidad de los NVMe.
 
 ---
 
@@ -56,14 +58,14 @@ Al ser de segunda mano no espero mucha vida útil, pero para dar paso a mis idea
 | Fecha de adquisición | Junio 2026 |
 | Rol | Almacenamiento principal / backups |
 
-> [!warning] Hardware de segunda mano
-> Al no ser nuevo, no se espera una vida útil muy larga. Vigilar estado de los discos y salud general del equipo.
+> [!WARNING]
+> **Hardware de segunda mano:** Al no ser nuevo, no se espera una vida útil muy larga. Vigilar estado de los discos y salud general del equipo.
 
 ---
 
 ## SAI Salicru
 
-Incorporado para evitar sustos durante tormentas y cortes de luz. Se conecta por USB a la Raspberry Pi 5 para que NUT supervise el estado eléctrico y dispare el apagado limpio del UNAS-4 y de la propia Raspberry ante un corte prolongado (ver [[SAI-UPS]]).
+Incorporado para evitar sustos durante tormentas y cortes de luz. Se conecta por USB a la Raspberry Pi 5 para que NUT supervise el estado eléctrico y dispare el apagado limpio del UNAS-4 y de la propia Raspberry ante un corte prolongado (ver [SAI / UPS](./SAI-UPS.md)).
 
 | Campo | Detalle |
 |---|---|

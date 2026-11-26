@@ -1,5 +1,7 @@
 # Nextcloud
 
+[← Volver al inicio](./README.md)
+
 ## Qué es
 
 Nextcloud es una plataforma de nube personal, pensada como alternativa autoalojada a servicios como Google Drive o Dropbox. Permite guardar archivos, sincronizarlos entre dispositivos y acceder a ellos desde cualquier lugar, pero almacenando todo en tu propia infraestructura. Además de archivos, Nextcloud funciona como un ecosistema ampliable mediante aplicaciones (plugins), que añaden funciones como notas, calendario, contactos, gestión de tareas y muchas más.
@@ -12,8 +14,8 @@ Como servidor de ficheros ya funciona correctamente. Todavía tengo que darle un
 
 ## Estado actual
 
-> [!note] Servicio en construcción
-> Nextcloud es, a día de hoy, el servicio en el que estoy trabajando de forma más activa. La parte de almacenamiento de ficheros ya está operativa, pero quedan muchas funciones por explorar y configurar.
+> [!NOTE]
+> **Servicio en construcción:** Nextcloud es, a día de hoy, el servicio en el que estoy trabajando de forma más activa. La parte de almacenamiento de ficheros ya está operativa, pero quedan muchas funciones por explorar y configurar.
 
 ### Funciones activas
 
@@ -42,7 +44,7 @@ Como servidor de ficheros ya funciona correctamente. Todavía tengo que darle un
 
 ## Conceptos relacionados
 
-- [[Self-hosting]]
-- [[Contenedor (LXC)]]
-- [[NFS]]
-- [[NAS]]
+- [Self-hosting](./Conceptos.md#self-hosting)
+- [Contenedor (LXC)](./Conceptos.md#contenedor-lxc)
+- [NFS](./Conceptos.md#nfs)
+- [NAS](./Conceptos.md#nas)

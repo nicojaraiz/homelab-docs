@@ -1,5 +1,7 @@
 # Conceptos
 
+[← Volver al inicio](./README.md)
+
 Esta página es un glosario. Aquí explico, de la forma más simple posible, los términos técnicos que van apareciendo a lo largo de la documentación. La idea es que si no tienes ni idea del tema, puedas venir aquí, entender el concepto, y volver a la página donde lo viste sin perderte.
 
 ---
@@ -20,8 +22,8 @@ RAID es una forma de combinar varios discos para conseguir más velocidad, más 
 - **RAID 5**: los datos y la información de redundancia (paridad) se reparten entre todos los discos del conjunto. Permite perder **un** disco sin perder datos, y aprovecha mejor el espacio que el RAID 1.
 - **RAID 6**: similar al RAID 5, pero permite perder **dos** discos a la vez sin perder datos. A cambio, se pierde algo más de espacio usable.
 
-> [!note] Relacionado
-> Ver [[Hardware]] para la configuración RAID concreta usada en este homelab (RAID 1 en la Raspberry, RAID 5 en el NAS).
+> [!NOTE]
+> **Relacionado:** Ver [Hardware](./Hardware.md) para la configuración RAID concreta usada en este homelab (RAID 1 en la Raspberry, RAID 5 en el NAS).
 
 ## NAS
 
@@ -57,7 +59,7 @@ Siglas de *Virtual Private Network* (red privada virtual). Permite conectarte de
 
 ## DHCP
 
-Siglas de *Dynamic Host Configuration Protocol*. Es el sistema que asigna automáticamente una dirección IP a cada dispositivo que se conecta a la red, para que no haya que configurarla manualmente en cada uno. En este homelab, algunos dispositivos tienen IP fija en lugar de recibirla por DHCP (ver [[Red]]).
+Siglas de *Dynamic Host Configuration Protocol*. Es el sistema que asigna automáticamente una dirección IP a cada dispositivo que se conecta a la red, para que no haya que configurarla manualmente en cada uno. En este homelab, algunos dispositivos tienen IP fija en lugar de recibirla por DHCP (ver [Red](./Red.md)).
 
 ## Dirección IP / rango de red (notación CIDR)
 
@@ -65,11 +67,11 @@ Una dirección IP identifica a un dispositivo dentro de una red. La notación `1
 
 ## SAI / UPS
 
-Siglas de **Sistema de Alimentación Ininterrumpida** (en inglés, *Uninterruptible Power Supply*). Es un dispositivo con baterías internas al que se conectan los equipos críticos del homelab (en este caso, la Raspberry Pi y el NAS). Si se va la luz, el SAI sigue suministrando electricidad durante unos minutos, dando margen para que los equipos se apaguen de forma ordenada y evitando que un corte brusco corrompa los discos o los datos (ver [[SAI-UPS]]).
+Siglas de **Sistema de Alimentación Ininterrumpida** (en inglés, *Uninterruptible Power Supply*). Es un dispositivo con baterías internas al que se conectan los equipos críticos del homelab (en este caso, la Raspberry Pi y el NAS). Si se va la luz, el SAI sigue suministrando electricidad durante unos minutos, dando margen para que los equipos se apaguen de forma ordenada y evitando que un corte brusco corrompa los discos o los datos (ver [SAI / UPS](./SAI-UPS.md)).
 
 ## NUT (Network UPS Tools)
 
-Conjunto de herramientas de código abierto para Linux que permite monitorizar un SAI (por ejemplo, a través de un cable USB) y automatizar acciones cuando hay un corte eléctrico. En este homelab corre en la Raspberry Pi, lee el estado de la batería del SAI Salicru y, cuando queda poca carga, dispara el apagado automático tanto del [[NAS]] como de la propia [[RaspberryPi]].
+Conjunto de herramientas de código abierto para Linux que permite monitorizar un SAI (por ejemplo, a través de un cable USB) y automatizar acciones cuando hay un corte eléctrico. En este homelab corre en la Raspberry Pi, lee el estado de la batería del SAI Salicru y, cuando queda poca carga, dispara el apagado automático tanto del [NAS](./NAS.md) como de la propia [Raspberry Pi](./RaspberryPi.md).
 
 ## SSH (Secure Shell)
 
@@ -81,5 +83,5 @@ En Linux, un demonio es un programa que se ejecuta de forma continua en segundo 
 
 ---
 
-> [!note] Pendiente de ampliar
-> Esta página se irá ampliando con nuevos conceptos a medida que aparezcan en el resto de la documentación.
+> [!NOTE]
+> **Pendiente de ampliar:** Esta página se irá ampliando con nuevos conceptos a medida que aparezcan en el resto de la documentación.

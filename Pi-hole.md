@@ -1,5 +1,7 @@
 # Pi-hole
 
+[← Volver al inicio](./README.md)
+
 ## Qué es
 
 Pi-hole es un servicio que actúa como filtro de publicidad y rastreadores para toda la red, en lugar de tener que instalar un bloqueador en cada dispositivo por separado. Funciona como un servidor DNS: cuando cualquier dispositivo de la red (móvil, ordenador, smart TV...) intenta cargar una página, esa petición pasa primero por Pi-hole, que comprueba si el dominio solicitado pertenece a una lista de anuncios, rastreadores o dominios maliciosos conocidos. Si es así, la bloquea antes de que llegue a cargarse.
@@ -22,8 +24,8 @@ Estuve unos meses usando la lista por defecto de Pi-hole, pero más adelante me 
 | Repositorio | https://github.com/hagezi/dns-blocklists |
 | Entradas (a fecha de consulta) | 228.709 |
 
-> [!note] Configuración DNS
-> Pi-hole está configurado como servidor DNS de la red, pero no se utiliza como resolvedor de nombres (no gestiona la resolución de dominios en sí). Su función aquí se limita al filtrado mediante la lista de bloqueo, actuando efectivamente como un adblock a nivel de red.
+> [!NOTE]
+> **Configuración DNS:** Pi-hole está configurado como servidor DNS de la red, pero no se utiliza como resolvedor de nombres (no gestiona la resolución de dominios en sí). Su función aquí se limita al filtrado mediante la lista de bloqueo, actuando efectivamente como un adblock a nivel de red.
 
 ## Resumen
 
@@ -40,6 +42,6 @@ Estuve unos meses usando la lista por defecto de Pi-hole, pero más adelante me 
 
 ## Conceptos relacionados
 
-- [[Servidor DNS]]
-- [[Contenedor (LXC)]]
-- [[DHCP]]
+- [Servidor DNS](./Conceptos.md#servidor-dns)
+- [Contenedor (LXC)](./Conceptos.md#contenedor-lxc)
+- [DHCP](./Conceptos.md#dhcp)

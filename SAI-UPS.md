@@ -1,5 +1,7 @@
 # SAI / UPS (Salicru + NUT)
 
+[← Volver al inicio](./README.md)
+
 ## ¿Por qué un SAI en el homelab?
 
 Cuando empecé a montar todo el homelab (la Raspberry Pi con Proxmox, los contenedores y el UniFi UNAS-4 con todos los discos y copias), había algo que me tenía bastante intranquilo: **las tormentas y los microcortes de luz**.
@@ -25,8 +27,8 @@ El **UniFi UNAS-4** no soporta de forma nativa clientes NUT de terceros (está p
 | Nodo apagado por SSH | UniFi UNAS-4 (`192.168.1.6`) |
 | Autonomía estimada | ~15–25 minutos con una carga actual del ~11% |
 
-> [!note] Sobre el porcentaje de batería
-> Este modelo de Salicru no reporta el porcentaje exacto por firmware, sino que NUT lo estima a partir del voltaje de la batería (`13.50 V` en reposo hasta `10.40 V` descargada). Cuando el SAI entra en umbral de batería baja, emite la señal `LB` (`LOWBATT`) y dispara el apagado automático.
+> [!NOTE]
+> **Sobre el porcentaje de batería:** Este modelo de Salicru no reporta el porcentaje exacto por firmware, sino que NUT lo estima a partir del voltaje de la batería (`13.50 V` en reposo hasta `10.40 V` descargada). Cuando el SAI entra en umbral de batería baja, emite la señal `LB` (`LOWBATT`) y dispara el apagado automático.
 
 ---
 
@@ -77,8 +79,8 @@ Creamos el usuario interno `monuser` que utilizará el demonio monitor (`upsmon`
     upsmon master
 ```
 
-> [!warning] Importante con la contraseña de NUT
-> En los archivos `.conf` y `.users` de NUT, el carácter `#` se interpreta como el inicio de un comentario. La contraseña elegida **no debe contener `#`**, espacios ni comillas, o `upsmon` cortará la línea y fallará al arrancar. Además, debe coincidir exactamente con la puesta en `upsmon.conf`.
+> [!WARNING]
+> **Importante con la contraseña de NUT:** En los archivos `.conf` y `.users` de NUT, el carácter `#` se interpreta como el inicio de un comentario. La contraseña elegida **no debe contener `#`**, espacios ni comillas, o `upsmon` cortará la línea y fallará al arrancar. Además, debe coincidir exactamente con la puesta en `upsmon.conf`.
 
 #### `/etc/nut/upsmon.conf`
 Indicamos qué SAI debe vigilar `upsmon` y qué script debe lanzar cuando reciba la orden de apagado (sustituye `<PASSWORD_LOCAL_NUT>` por la misma contraseña definida en `upsd.users`):
@@ -154,8 +156,8 @@ chmod +x /usr/local/bin/apagado-emergencia.sh
 
 ## Conceptos relacionados
 
-- [[SAI / UPS]]
-- [[NUT (Network UPS Tools)]]
-- [[SSH (Secure Shell)]]
-- [[Demonio (Daemon)]]
-- [[NFS]]
+- [SAI / UPS](./Conceptos.md#sai--ups)
+- [NUT (Network UPS Tools)](./Conceptos.md#nut-network-ups-tools)
+- [SSH (Secure Shell)](./Conceptos.md#ssh-secure-shell)
+- [Demonio (Daemon)](./Conceptos.md#demonio-daemon)
+- [NFS](./Conceptos.md#nfs)

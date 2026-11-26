@@ -1,5 +1,7 @@
 # Procedimientos
 
+[← Volver al inicio](./README.md)
+
 Esta página reúne procedimientos paso a paso para tareas de mantenimiento y gestión del homelab. La idea es no depender de la memoria ni tener que rebuscar en el historial del navegador cada vez que necesito hacer algo que ya he hecho antes.
 
 Cada procedimiento sigue, en la medida de lo posible, esta estructura:
@@ -54,5 +56,5 @@ Cada procedimiento sigue, en la medida de lo posible, esta estructura:
 
 ---
 
-> [!note] Pendiente
-> La estructura está preparada; iré redactando cada procedimiento a medida que lo ejecute o revise en el homelab.
+> [!NOTE]
+> **Pendiente:** La estructura está preparada; iré redactando cada procedimiento a medida que lo ejecute o revise en el homelab.
