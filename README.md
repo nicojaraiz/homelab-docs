@@ -16,23 +16,24 @@ No voy a mentir: tengo cosas ya empezadas y no las he documentado, pero bueno, r
 
 ## Índice del proyecto
 
-- [Hardware](./Hardware.md)
-- [Red](./Red.md)
-- [Raspberry Pi](./RaspberryPi.md)
-- [NAS](./NAS.md)
-- [Servicios](./Servicios.md)
-  - [Pi-hole](./Pi-hole.md)
-  - [Immich](./Immich.md)
-  - [Nextcloud](./Nextcloud.md)
-- [Conceptos](./Conceptos.md)
-- [Procedimientos](./Procedimientos.md)
+- [[Hardware]]
+- [[Red]]
+- [[RaspberryPi]]
+- [[NAS]]
+- [[SAI-UPS]]
+- [[Servicios]]
+	- [[Pi-hole]]
+	- [[Immich]]
+	- [[Nextcloud]]
+- [[Conceptos]]
+- [[Procedimientos]]
 
 ---
 
 ## Estado actual
 
-> [!NOTE]
-> Última actualización: pendiente de completar
+> [!note] Última actualización
+> Noviembre 2026 — Integración de SAI Salicru + NUT y apagado automático por SSH del UNAS-4.
 
 | Área | Estado |
 |---|---|
@@ -40,6 +41,7 @@ No voy a mentir: tengo cosas ya empezadas y no las he documentado, pero bueno, r
 | Red documentada | Completo |
 | Raspberry Pi documentada | Completo |
 | NAS documentado | Completo |
+| SAI / UPS documentado | Completo |
 | Servicios documentados | Completo (Pi-hole, Immich, Nextcloud) |
 | Conceptos | En progreso |
-| Procedimientos | Pendiente de contenido |
+| Procedimientos | Pendiente |
