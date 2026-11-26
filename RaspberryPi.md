@@ -1,8 +1,6 @@
-# Raspberry Pi
+# RaspberryPi
 
-[← Volver al índice](./README.md)
-
-La Raspberry tiene dos funciones esenciales dentro del proyecto.
+La Raspberry tiene tres funciones esenciales dentro del proyecto: acceso remoto mediante VPN, virtualización ligera con Proxmox VE y gestión energética con NUT.
 
 ## VPN con PiVPN
 
@@ -26,8 +24,8 @@ La Raspberry es un nodo de Proxmox VE. Sí, la Raspberry aloja un servidor Proxm
 
 Así que, dicho esto, la Raspberry tiene Proxmox, desde donde controlo todos los contenedores virtuales en los que alojo mis servicios. Con Proxmox, de una manera muy visual, puedo asignar los recursos que quiera a cada contenedor de forma sencilla, además de poder gestionarlo todo desde una misma interfaz, lo cual a nivel de gestión lo facilita todo.
 
-> [!NOTE]
-> **Proxmox VE en Raspberry Pi: no es la versión oficial.** Proxmox VE está pensado oficialmente para procesadores x86 (Intel/AMD), no para ARM. Lo que corre en la Raspberry es un port no oficial mantenido por la comunidad (compilado para ARM64), que replica la funcionalidad de Proxmox sobre Raspberry Pi OS.
+> [!note] Proxmox VE en Raspberry Pi: no es la versión oficial
+> Proxmox VE está pensado oficialmente para procesadores x86 (Intel/AMD), no para ARM. Lo que corre en la Raspberry es un **port no oficial mantenido por la comunidad** (compilado para ARM64), que replica la funcionalidad de Proxmox sobre Raspberry Pi OS.
 >
 > Funciona muy bien para el uso que le voy a dar (contenedores LXC ligeros), pero conviene tenerlo presente: las plantillas de contenedores tienen que ser de arquitectura ARM64 (no sirven las x86), y no todas las máquinas virtuales van a funcionar igual de bien que en una instalación oficial.
 
@@ -37,6 +35,7 @@ Así que, dicho esto, la Raspberry tiene Proxmox, desde donde controlo todos los
 | Versión | 8.3.2+port |
 | Corre sobre | Raspberry Pi OS |
 | Nodo | raspberrypi |
+| IP de acceso | `192.168.1.5` (`https://192.168.1.5:8006`) |
 | Función | Hipervisor / gestión de contenedores y VMs |
 | Workloads principales | Contenedores LXC |
 | Acceso | Interfaz web de Proxmox |
@@ -49,11 +48,14 @@ Así que, dicho esto, la Raspberry tiene Proxmox, desde donde controlo todos los
 | 101 | immich | 2.00 GiB | 1.49 GiB | 2 | 20G | /mnt/unifi_immich → /mnt/photos |
 | 102 | nextcloud | 2.00 GiB | 512 MiB | 2 | 20G | /mnt/nas-nextcloud → /mnt/nextcloud-data |
 
-> [!NOTE]
-> **Conexión con el NAS.** El UNAS-4 está conectado a la Raspberry mediante NFS. Los detalles de configuración (exports, permisos, etc.) están documentados en la página del [NAS](./NAS.md).
+> [!note] Conexión con el NAS
+> El UNAS-4 está conectado a la Raspberry mediante NFS. Los detalles de configuración (exports, permisos, etc.) se documentarán en la página dedicada al NAS.
 
-> [!NOTE]
-> Pendiente de documentar: IP / forma de acceso a la interfaz de Proxmox.
+---
+
+## Gestión energética y apagado automático (NUT)
+
+La Raspberry Pi actúa como nodo maestro conectado por USB al SAI Salicru mediante **NUT (Network UPS Tools)**. Cuando hay un corte de luz y se alcanza batería baja (`LOWBATT`), ejecuta un script que envía `poweroff` por SSH al UNAS-4 (`192.168.1.6`), espera 30 segundos y apaga la propia Raspberry Pi. Todos los detalles están en [[SAI-UPS]].
 
 ---
 
@@ -63,12 +65,15 @@ Así que, dicho esto, la Raspberry tiene Proxmox, desde donde controlo todos los
 |---|---|---|
 | VPN | PiVPN | Acceso remoto al homelab desde el móvil u otros dispositivos |
 | Virtualización | Proxmox VE (ARM) | Alojar y gestionar todos los contenedores y servicios |
+| Continuidad eléctrica | NUT (`nutdrv_qx` + `upsmon`) | Supervisar el SAI Salicru y apagar el UNAS-4 y la Raspberry de forma segura |
 
 ---
 
-### Conceptos relacionados
+## Conceptos relacionados
 
-- [Hipervisor](./Conceptos.md#hipervisor)
-- [Contenedor (LXC)](./Conceptos.md#contenedor-lxc)
-- [VPN](./Conceptos.md#vpn)
-- [NFS](./Conceptos.md#nfs)
+- [[Hipervisor]]
+- [[Contenedor (LXC)]]
+- [[VPN]]
+- [[NFS]]
+- [[NUT (Network UPS Tools)]]
+- [[SAI / UPS]]

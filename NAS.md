@@ -1,6 +1,4 @@
-# NAS (UNAS-4)
-
-[← Volver al índice](./README.md)
+# UNAS-4 (NAS)
 
 ## Historia
 
@@ -32,8 +30,12 @@ El NAS comparte el almacenamiento hacia la Raspberry mediante NFS. Actualmente t
 | Permisos (nextcloud) | Read-Write |
 | Squash | Collaborative |
 
-> [!NOTE]
-> **¿Qué es el "squash" en NFS?** Es una configuración que determina cómo se traducen los permisos de usuario entre el cliente (la Raspberry) y el NAS. El modo "Collaborative" está pensado para que varios usuarios o servicios puedan escribir en la misma carpeta compartida sin conflictos de permisos.
+> [!note] ¿Qué es el "squash" en NFS?
+> Es una configuración que determina cómo se traducen los permisos de usuario entre el cliente (la Raspberry) y el NAS. El modo "Collaborative" está pensado para que varios usuarios o servicios puedan escribir en la misma carpeta compartida sin conflictos de permisos.
+
+## Apagado automático ante cortes de luz
+
+El UNAS-4 no integra un cliente NUT genérico de terceros, por lo que su apagado ordenado ante un corte eléctrico se orquesta desde la Raspberry Pi mediante **SSH por clave pública** cuando el SAI Salicru llega a batería baja (ver [[SAI-UPS]]).
 
 ## Resumen
 
@@ -48,8 +50,10 @@ El NAS comparte el almacenamiento hacia la Raspberry mediante NFS. Actualmente t
 
 ---
 
-### Conceptos relacionados
+## Conceptos relacionados
 
-- [NAS](./Conceptos.md#nas)
-- [NFS](./Conceptos.md#nfs)
-- [RAID](./Conceptos.md#raid)
+- [[NAS]]
+- [[NFS]]
+- [[RAID]]
+- [[SAI / UPS]]
+- [[SSH (Secure Shell)]]

@@ -1,7 +1,5 @@
 # Hardware
 
-[← Volver al índice](./README.md)
-
 Vamos a repasar con qué cuento físicamente para este proyecto. Como ya he adelantado, soy bastante agarrado con el dinero, así que aquí no vais a encontrar un datacenter, pero sí lo justo y necesario para que todo funcione bien.
 
 ---
@@ -10,8 +8,9 @@ Vamos a repasar con qué cuento físicamente para este proyecto. Como ya he adel
 
 | Equipo | Rol | Specs clave | Estado |
 |---|---|---|---|
-| Raspberry Pi 5 | Servidor principal | 8GB RAM, RAID 1 (mirror) en NVMe, Raspberry Pi OS | En uso |
+| Raspberry Pi 5 | Servidor principal / nodo NUT | 8GB RAM, RAID 1 (mirror) en NVMe, Raspberry Pi OS | En uso |
 | UNAS-4 (Ubiquiti) | Almacenamiento (NAS) | 4 bahías HDD, 8TB brutos / 4TB usables, RAID 5 | En uso |
+| SAI Salicru | Continuidad eléctrica y apagado seguro | Conexión USB a Raspberry Pi, protocolo Qx (`nutdrv_qx`) | En uso |
 | PC de sobremesa | Estación de trabajo | — | En uso |
 
 ---
@@ -30,11 +29,11 @@ Aviso: tengo pánico a la pérdida de datos. Por eso este RAID me parecía indis
 | RAM | 8GB |
 | Sistema operativo | Raspberry Pi OS |
 | Almacenamiento | 2x NVMe M.2 (vía HAT) en RAID 1 |
-| Rol | Servidor principal |
+| Rol | Servidor principal / nodo maestro NUT |
 | Fecha de adquisición | Pendiente |
 
-> [!NOTE]
-> Pendiente de documentar: modelo exacto del HAT y capacidad de los NVMe.
+> [!note] Pendiente de documentar
+> Modelo exacto del HAT y capacidad de los NVMe.
 
 ---
 
@@ -57,8 +56,21 @@ Al ser de segunda mano no espero mucha vida útil, pero para dar paso a mis idea
 | Fecha de adquisición | Junio 2026 |
 | Rol | Almacenamiento principal / backups |
 
-> [!WARNING]
-> Hardware de segunda mano: al no ser nuevo, no se espera una vida útil muy larga. Vigilar estado de los discos y salud general del equipo.
+> [!warning] Hardware de segunda mano
+> Al no ser nuevo, no se espera una vida útil muy larga. Vigilar estado de los discos y salud general del equipo.
+
+---
+
+## SAI Salicru
+
+Incorporado para evitar sustos durante tormentas y cortes de luz. Se conecta por USB a la Raspberry Pi 5 para que NUT supervise el estado eléctrico y dispare el apagado limpio del UNAS-4 y de la propia Raspberry ante un corte prolongado (ver [[SAI-UPS]]).
+
+| Campo | Detalle |
+|---|---|
+| Marca | Salicru |
+| Conexión al host | USB (ID `0665:5161`) |
+| Gestión | NUT (`nutdrv_qx` + `upsmon`) sobre Raspberry Pi |
+| Rol | Continuidad eléctrica y apagado ordenado |
 
 ---
 
@@ -79,10 +91,3 @@ No trabajo de forma constante: voy un poco a sprints. Durante una semana puedo e
 
 - Filosofía de hardware: lo justo y necesario, priorizando siempre la redundancia de datos antes que la expansión de servicios.
 - Ritmo de trabajo: por sprints, sin constancia fija.
-
----
-
-### Conceptos relacionados
-
-- [RAID](./Conceptos.md#raid)
-- [NAS](./Conceptos.md#nas)

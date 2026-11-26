@@ -1,7 +1,5 @@
 # Procedimientos
 
-[← Volver al índice](./README.md)
-
 Esta página reúne procedimientos paso a paso para tareas de mantenimiento y gestión del homelab. La idea es no depender de la memoria ni tener que rebuscar en el historial del navegador cada vez que necesito hacer algo que ya he hecho antes.
 
 Cada procedimiento sigue, en la medida de lo posible, esta estructura:
@@ -25,6 +23,12 @@ Cada procedimiento sigue, en la medida de lo posible, esta estructura:
 - Qué hacer si falla un disco
 - Añadir una nueva unidad/carpeta compartida por NFS
 - Comprobar el estado del RAID
+
+## SAI / NUT
+
+- Comprobar estado y carga del SAI Salicru (`upsc salicru@localhost`)
+- Verificar el servicio `nut-monitor` y la conexión SSH con el UNAS-4
+- Probar el apagado ordenado del UNAS-4 y la Raspberry Pi
 
 ## Pi-hole
 
@@ -50,5 +54,5 @@ Cada procedimiento sigue, en la medida de lo posible, esta estructura:
 
 ---
 
-> [!NOTE]
-> Esta página está vacía de contenido por ahora; solo tiene la estructura. Se irá completando con cada procedimiento a medida que se realice y se documente.
+> [!note] Pendiente
+> La estructura está preparada; iré redactando cada procedimiento a medida que lo ejecute o revise en el homelab.
